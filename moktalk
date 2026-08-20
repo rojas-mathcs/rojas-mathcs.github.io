@@ -1,0 +1,29 @@
+	Hilbert's Tenth Problem and the Genus Zero Locus
+
+		      J. Maurice Rojas
+
+		City University of Hong Kong 
+
+	While Hilbert's Tenth Problem has been settled negatively, 
+the exact frontier to undecidability is still unknown.  So we will 
+consider the following question: 
+
+	What is the least d such that one can NOT algorithmically 
+	determine whether an ARBITRARY variety of dimension d has an 
+	integral point? 
+
+Until recently, it was only known that 1<d<12. 
+	We show evidence that d=2.  In particular, we show that 
+if d>2, then (under an additional technical assumption) there must 
+exist algebraic plane curves with uncomputably large integral 
+points. The vast effort number theory has devoted to deriving 
+height bounds on many (but not all) curves can then 
+be taken as controversial evidence that d=2. 
+	The proof is based on some recent fast algorithms 
+for algebraic geometry over the complex numbers.  We begin 
+by briefly reviewing these results, and then outlining the 
+proof of our main result.  Time permitting, we will also 
+present a result (depending on the truth of the Generalized 
+Riemann Hypothesis) on the complexity of detecting rational points 
+on zero-dimensional varieties. 
+

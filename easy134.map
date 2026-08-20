@@ -1,0 +1,22 @@
+# Below are some examples of some very useful Maple command which 
+# can be used to solve Problems 1, 3, and 4 on HW#2: 
+# 
+
+ 2^51203; # this one should immediately yield the full decimal 
+          # expansion of 2^51203 
+
+ seq(2^k mod 11,k=1..100); # this yields all the powers 2^1, 2^2, ..., 2^100 
+                           # mod 11. 
+
+ with(numtheory); # this calls in Maple's number theory library, 
+                  # to enable useful commands like order. 
+ order(2,101); # this command tells you the order of 2 mod 101. 
+
+ Power(3,2^2048+1) mod 11; # note that 3^(2^2048+1) mod 11 yields an error, 
+                          # because maple uses the naive algorithm (unless 
+                          # told to do otherwise) and maple realizes that 
+                          # the naive algorithm will take too long. The 
+                          # Power command tells Maple to use the binary 
+                          # method, and thus allows much larger powers... 
+
+

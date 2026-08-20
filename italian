@@ -1,0 +1,54 @@
+
+
+Il lavoro ha numerosi problemi sia di presentazione che 
+di sostanza, che ne rendono sconsigliablile la pubblicazione. 
+
+Per quanto riguarda la presentazione, il lavoro non confronta il 
+sistema proposto rispetto a DBMS ad oggetti commercialmente disponibili 
+(quali ad esempio O2 e ObjectStore).  Mancano inoltre riferimenti 
+bibliografici ai numerosi lavori di Franklin che hanno trattato le 
+architetture client-server per sistemi ad oggetti e le relative 
+problematiche. 
+
+Per quanto riguarda gli aspetti tecnici, non e' ben chiaro in che 
+contesto tale servente potrebbe essere usato.  Gli autori si limitano 
+a menzionare che tale servente potrebbe usato per supportare la 
+realizzazione di DBMS ad oggeti e linguaggi di programmazione 
+persistenti (PPL).  Tuttavia esistono oggi DBMS ad 
+oggetti disponibili commercialmente, basati su architetture 
+client-server, e non appare probabile vista l'evoluzione corrente del 
+mercato che ci sia spazio per nuovi prodotti.  Per quanto riguarda 
+i PPL non sembrano rappresentare una valida alternativa ai DBMS 
+veri e propri e ci si puo' aspettare che rimarranno allo stato di 
+prototipi di recerca.  Pertanto nonson chiare le motivazioni tecniche 
+per lo sviluppo di un servente quale quello proposto. 
+
+In particolare, il modello dei dati di ADELPHOS appare arbitrario. 
+Gli autori non discutono il razionale usato nella scelta delle 
+caratteristiche specifiche del modello.  Inoltre, alcune restrizioni 
+adottate, quale mancanza di supporto per le gerarchie di generalizzazione 
+tra collezioni e l'imposizione che gli oggetti non possano cambiare 
+dimensione, sono del tutto irrealistiche.  Il fatto che non ci sia una 
+nozione di generalizzazione tra collezioni implica che tecniche di 
+indicizzazioni (quali il class-inheritance index) non possano essere 
+adottate con gravi ripercussioni sulla performance delle interrogazioni. 
+Per quanto riguarda l'imposizione sulla lunghezza degli oggetti, 
+tale imposizione appare estremamente restrittiva se si considera il 
+il fatto che un modello ad oggetti supporta attributi multi-valore con 
+possibilita di aggiungere e togliere elementi dagli insiemi.  Non e' 
+chiaro come queste operazioni potrebbero essere supoortate in un 
+sistema in cui la dimensione degli oggetti e' fissata al momento 
+della loro creazione e poi non possa piu' essere modificata.  Gli 
+autori non discutono inoltre la rappresentazione degli OID in memoria 
+secondaria e in main memory.  Infine, sebbene gli autori affermano 
+che il servente e' aperto, non discutono affatto l'estebsibilita' 
+fisica del sistema; a tal riguardo avrebbero dovuto confronto il 
+loro sistema con architetture quali l'architettura Data Blades di 
+Informix o l'architettura a Cartridges di Oracle. 
+
+La discussione sull'architettura appare del tutto superficiale; 
+non sono descritte possibili scelte o alternative nel progetto 
+dell'architettura.  Le funzionalita' dell'architettura sono del 
+tutto standard e presentano alcunche' di innovativo. 
+
+

@@ -1,0 +1,29 @@
+# 44/31 is about 1.4194...
+# 1.418 would work too..
+# in fact, according to maple and bigdisc, 
+# anything in (1.4177,1.4195) should work! 
+#
+# one more note: 
+# going to 1.42 yields 3 roots with + y ...
+# and 
+# going to 1.42 yields 1 roots with + y ...
+#
+# interesting note: there are 7 intersections 
+# between the real disc locus --- IN THE NEGATIVE QUADRANT! --- 
+# and the real disc locus... 7/27/05...
+
+G:=a->[x^6+a*y^3-y,y^6+a*x^3-x]: with(Groebner): 
+
+moo:=gsolve(G(44/31),{x,y}): 
+
+realroot(moo[1,1,1]); 
+realroot(moo[2,1,1]): 
+realroot(moo[3,1,1]): 
+
+goo1:=op(1,moo[1,1,2])-moo[1,1,2]: 
+goo2:=op(1,moo[2,1,2])-moo[2,1,2]: 
+goo3:=op(1,moo[3,1,2])-moo[3,1,2]: 
+
+with(plots): 
+
+implicitplot([subs({x=s,y=t},f)=0,subs({x=s,y=t},g)=0],s=-2..2,t=-2..2,color=[red,blue],numpoints=200); 

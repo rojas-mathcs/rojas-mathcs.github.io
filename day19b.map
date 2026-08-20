@@ -1,0 +1,49 @@
+# j. maurice rojas, mar. 23, 2017
+# this short program tries to find a random 160 digit 
+# pseudo-prime via miller-rabin certificates, using N trials... 
+testp:=proc(putp,numwitpicks) 
+
+local a,afailed,i,j,foundpseudoprime,n,foundcompowit,o2,q,randoma: 
+
+with(numtheory): # call in the number theory library 
+with(padic):     # call in the p-adic library (here, just for the ord command)
+
+ foundpseudoprime:=0: randoma:=rand(2..(putp-1)): 
+
+ j:=numwitpicks: foundcompowit:=0: # no compositeness witness yet... 
+ while (foundcompowit=0 and j>0) do  
+  j:=j-1: a:=randoma():   # pick and a random a 
+  afailed:=0: # we don't know whether current a is a witness a yet...
+  o2:=ordp(putp-1,2):     # find exponent of largest power of 2 dividing n-1
+  q:=(putp-1)/(2^o2):     # extract odd part of originaln-1. 
+  a:=Power(a,q) mod putp: # replace a by value of a^q mod putp 
+  # outer if/else/end block checks whether a^q is 1 or not... 
+  #  NOTE: value of a was reset to a^q mod putp, hence use of a below...
+  if ((a-1 mod putp)<>0) then 
+   i:=o2: 
+   while ((afailed=0) and i>0) do 
+    i:=i-1:  
+    if ((a+1 mod putp)<>0) then      
+     a:=a^2 mod putp: 
+    else 
+     afailed:=1: 
+    end: 
+   end: 
+  else  
+   afailed:=1: 
+  end if: 
+   
+  if afailed=0 then 
+   foundcompowit:=1: 
+  end: 
+   
+ end;
+
+ if foundcompowit=0 then 
+  foundpseudoprime:=1: 
+  print("Found ",putp," to be a pseudo-prime..."): 
+ end: 
+
+foundpseudoprime; 
+
+end proc: 

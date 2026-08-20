@@ -1,0 +1,36 @@
+<head><title>AMOEBA: A Matlab Package for Visualizing Alegbraic Plane 
+Curves Over non-Archimedean Complete Fields</title>
+
+<h1>
+AMOEBA: A Matlab Package for Visualizing Alegbraic Plane 
+Curves Over non-Archimedean Complete Fields</h1>
+<p> 
+<hr>
+
+<p>
+This is a preliminary release of some code co-authored with my 
+research assistant Zhigang Zhang. The output is in OOGL format for 
+visualization by Geomview. More documentation will 
+appear soon but in the mean time please feel free to pester Zhigang or myself. 
+<ul>
+<li><a href="pamoeba.m">pamoeba.m</a>: a Matlab program 
+which takes input lists of coefficients and exponent vectors and 
+computes the p-adic amoeba of the resulting algebraic plane curve 
+over the p-adic complex numbers.  
+<li><a href="polytran2v.m">polytran2v.m</a>: a Matlab program 
+which takes the coefficient vector of exponent matrix of a 
+bivariate polynomial f and computes the corresponding 
+data for f(x+1,y+1). (Useful for verifying my theorem that 
+the number of p-adic complex roots close to unity admits an 
+upper bound depending on just the number of exponent vectors.) 
+<li><a href="lowhull2file.m">lowhull2file.m</a>: computes the 
+lower hull of the p-adic Newton polytope of an input polynomial 
+and places the output in a file in OOGL format, ready for viewing 
+by Geomview. 
+<li><a href="sub2file.m">sub2file.m</a>: converts the 
+precomputed mixed subdivision information into an OOGL 
+file.   
+<li><a href="padicorder.m">padicorder.m</a>: a small utility for 
+computing p-adic valuations.  
+</ul>
+<hr> 

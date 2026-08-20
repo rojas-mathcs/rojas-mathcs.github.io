@@ -1,0 +1,791 @@
+%!PS-Adobe-3.0
+%%Creator: Anyware
+%%Pages: 2
+%%DocumentNeededResources: font Courier Helvetica Times-Bold Symbol
+%%+ font Times-Roman
+%%EndComments
+%%BeginProlog
+/bd { bind def } bind def
+/n  { newpath } bd
+/L  { lineto } bd
+/M  { moveto } bd
+/C  { curveto } bd
+/RL { rlineto } bd
+/MR { rmoveto } bd
+/ST { show } bd
+/S  { stroke } bd
+/SP { strokepath } bd
+/GS { gsave } bd
+/GR { grestore } bd
+/GRAY { setgray } bd
+/AXscale { 72 1000 div } bd
+/DOSETUP {
+      AXscale dup scale
+      1 setlinecap
+      4 setlinewidth
+      1 setlinejoin
+      4 setmiterlimit
+      [] 0 setdash
+} bd
+/DOCLIPBOX {
+    n 4 2 roll 2 copy M 4 1 roll exch 2 copy L exch pop 2 copy L pop
+    exch L closepath clip
+} bd
+/AXredict 14 dict def
+/X {
+      AXredict begin
+      exch /str exch def
+      str stringwidth pop sub
+      str length div 0 str ashow
+      end
+} bd
+/FINDFONT {
+    { findfont } stopped
+    { /Times-Roman findfont } if
+} bd
+/POINTSCALEFONT { AXscale div scalefont } bd
+/DOTSCALEFONT { scalefont } bd
+/SETFONT { setfont } bd
+/p01 <000e0e0600e0e060> def
+/p02 <0f0f0f0ff0f0f0f0> def
+/p03 <ff1f1f9ffff1f1f9> def
+/p04 <fffcfffcfffcfffcfffcfffcfffcfffcfffcfffcfffcfffcfffcfffc> def
+/p10 <040f0f0e40f0f0e0> def
+/p12 <0006060000606000> def
+/p13 <ff9f9ffffff9f9ff> def
+/p21 <ff0f0f1ffff0f0f1> def
+/ReEncodeSmall {
+      AXredict begin
+      /newcn exch def
+      /newfn exch def
+      /basefn exch def
+      /basefd basefn FINDFONT def
+      /newf basefd maxlength dict def
+      basefd
+      {
+      exch dup /FID ne
+      {
+        dup dup /Encoding eq exch /FontBBox eq or
+        { exch dup length array copy newf 3 1 roll put }
+        { exch newf 3 1 roll put }
+        ifelse
+      }
+      { pop pop }
+      ifelse
+      } forall
+      newf /FontName newfn put
+      newcn aload pop
+      newcn length 2 idiv
+      { newf /Encoding get 3 1 roll put }
+      repeat
+      newfn newf definefont pop
+      end
+} def
+/evISOLatin1Encoding [
+49 /one
+185 /onesuperior
+179 /threesuperior
+178 /twosuperior
+40 /parenleft
+242 /ograve
+210 /Ograve
+186 /ordmasculine
+183 /periodcentered
+93 /bracketright
+36 /dollar
+240 /eth
+52 /four
+45 /hyphen
+159 /tilde
+95 /underscore
+35 /numbersign
+170 /ordfeminine
+53 /five
+56 /eight
+162 /cent
+33 /exclam
+215 /multiply
+42 /asterisk
+189 /onehalf
+171 /guillemotleft
+227 /atilde
+195 /Atilde
+254 /thorn
+222 /Thorn
+124 /bar
+123 /braceleft
+165 /yen
+65 /A
+66 /B
+67 /C
+68 /D
+69 /E
+70 /F
+71 /G
+44 /comma
+72 /H
+58 /colon
+73 /I
+74 /J
+75 /K
+76 /L
+249 /ugrave
+232 /egrave
+217 /Ugrave
+200 /Egrave
+77 /M
+78 /N
+79 /O
+80 /P
+180 /acute
+81 /Q
+50 /two
+82 /R
+83 /S
+84 /T
+85 /U
+86 /V
+87 /W
+88 /X
+89 /Y
+90 /Z
+47 /slash
+191 /questiondown
+184 /cedilla
+97 /a
+60 /less
+98 /b
+190 /threequarters
+99 /c
+100 /d
+55 /seven
+101 /e
+102 /f
+54 /six
+103 /g
+51 /three
+104 /h
+105 /i
+106 /j
+107 /k
+161 /exclamdown
+108 /l
+109 /m
+57 /nine
+110 /n
+111 /o
+112 /p
+39 /quoteright
+34 /quotedbl
+253 /yacute
+237 /iacute
+225 /aacute
+221 /Yacute
+205 /Iacute
+193 /Aacute
+113 /q
+114 /r
+115 /s
+116 /t
+117 /u
+118 /v
+119 /w
+120 /x
+121 /y
+122 /z
+92 /backslash
+163 /sterling
+251 /ucircumflex
+244 /ocircumflex
+238 /icircumflex
+234 /ecircumflex
+226 /acircumflex
+219 /Ucircumflex
+212 /Ocircumflex
+206 /Icircumflex
+202 /Ecircumflex
+194 /Acircumflex
+158 /circumflex
+223 /germandbls
+255 /ydieresis
+252 /udieresis
+246 /odieresis
+239 /idieresis
+235 /edieresis
+228 /adieresis
+220 /Udieresis
+214 /Odieresis
+207 /Idieresis
+203 /Edieresis
+196 /Adieresis
+168 /dieresis
+188 /onequarter
+176 /degree
+164 /currency
+156 /ring
+187 /guillemotright
+208 /Eth
+32 /space
+177 /plusminus
+229 /aring
+197 /Aring
+61 /equal
+38 /ampersand
+37 /percent
+230 /ae
+59 /semicolon
+247 /divide
+43 /plus
+94 /asciicircum
+174 /registered
+181 /mu
+125 /braceright
+62 /greater
+243 /oacute
+211 /Oacute
+64 /at
+166 /brokenbar
+173 /minus
+248 /oslash
+216 /Oslash
+172 /logicalnot
+198 /AE
+182 /paragraph
+236 /igrave
+224 /agrave
+204 /Igrave
+192 /Agrave
+48 /zero
+175 /macron
+41 /parenright
+241 /ntilde
+209 /Ntilde
+96 /quoteleft
+46 /period
+231 /ccedilla
+199 /Ccedilla
+167 /section
+63 /question
+155 /dotlessi
+91 /bracketleft
+157 /grave
+169 /copyright
+250 /uacute
+233 /eacute
+218 /Uacute
+201 /Eacute
+245 /otilde
+213 /Otilde
+126 /asciitilde
+] def
+/DEFINEFONTS {
+      /AXFont4p120000 /Courier FINDFONT 12.000 POINTSCALEFONT def
+      /AXFont0p180000 /Helvetica FINDFONT 18.000 POINTSCALEFONT def
+      /AXFont2p120000 /Times-Bold FINDFONT 12.000 POINTSCALEFONT def
+      /AXFont3p120000 /Symbol FINDFONT 12.000 POINTSCALEFONT def
+      /Times-Roman /ETimes-Roman evISOLatin1Encoding ReEncodeSmall
+      /AXFont1p120000 /ETimes-Roman FINDFONT 12.000 POINTSCALEFONT def
+} def
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier
+%%IncludeResource: font Helvetica
+%%IncludeResource: font Times-Bold
+%%IncludeResource: font Symbol
+%%IncludeResource: font Times-Roman
+
+DEFINEFONTS
+systemdict /setcmykcolor known
+{
+       /SET_CMYK { setcmykcolor } bd
+}
+{
+       /SET_CMYK {
+       exch .2 mul add
+       exch .4 mul add
+       exch .3 mul add
+       dup 1 gt
+       {pop 1} {} ifelse
+       1 exch sub setgray
+       } bd
+}
+ifelse
+systemdict /colorimage known
+{
+       /GET_CMYK { currentcmykcolor } bd
+}
+{
+       /GET_CMYK {
+       0 0 0 
+       1 currentgray sub
+       } bd
+}
+ifelse
+systemdict /colorimage known
+{
+   /COLORIMAGE { false 4 colorimage } bd
+       /SELECTBUF { pop } bd
+}
+{
+       /COLORIMAGE { image } bd
+       /SELECTBUF { exch pop } bd
+}
+ifelse
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+save /AXPageSave exch def
+DOSETUP
+0 11000 8500 0 DOCLIPBOX
+%%EndPageSetup
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont1p120000 SETFONT
+GS
+n
+3639 10448 M
+(Itinerary for) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont2p120000 SETFONT
+GS
+n
+2762 10255 M
+(Hadi Salmasian, February 6-8, 2007) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont1p120000 SETFONT
+GS
+n
+2634 10062 M
+(Local Host:  Dr. Maurice Rojas  845-2083) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+2175 9869 M
+(Visiting Office Assignment:  Milner 309  979-845-2691) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont2p120000 SETFONT
+GS
+n
+990 9490 M
+(Tuesday, February 6) ST
+GR
+GS
+0 11000 32000 -21000 DOCLIPBOX
+n
+990 9448 M
+2477 9448 L 
+8 setlinewidth
+0 setlinecap
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+S
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont1p120000 SETFONT
+GS
+n
+990 9111 M
+(2:25pm) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 9111 M
+(Arrives in College Station AA 3287) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 8918 M
+(Dr. Rojas will pick up from airport) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 8539 M
+(Check into Vineyard Court Suites reservation #35028) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont2p120000 SETFONT
+GS
+n
+990 8160 M
+(Wednesday, February 7) ST
+GR
+GS
+0 11000 32000 -21000 DOCLIPBOX
+n
+990 8118 M
+2700 8118 L 
+8 setlinewidth
+0 setlinecap
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+S
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont1p120000 SETFONT
+GS
+n
+990 7781 M
+(9:15am) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1490 7781 M
+(Check-in with Mimi Bowman, Milner 102) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+990 7402 M
+(9:30am          ) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 7402 M
+(Meet with Dr. Al Boggess, Department Head, Milner 109) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 7209 M
+(Al will escort to Blocker) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+990 6830 M
+(10:30am) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 6830 M
+(Meet with Dr. Don Allen, Associate Department Head, Blocker 601) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+990 6451 M
+(11:00am) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 6451 M
+(Meet with Dr. Paulo Lima-Filho, Milner 331) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+990 6065 M
+(11:30am) 582 X
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 6065 M
+(Meet with Dr. Phil Yasskin, Blocker 620I) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+990 5686 M
+(12:00pm) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 5686 M
+(Lunch with Drs. Dos Santos, Lima-Filho, Rojas, and Yasskin) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+990 5307 M
+(1:30pm) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 5307 M
+(Meet with Dr. Paula Tretkoff, Milner 332) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 4928 M
+(2:00pm) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1987 4928 M
+(Meet with Dr. Frank Sottile, Milner 303) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 4549 M
+(2:30pm) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1987 4549 M
+(Meet with Dr. Catherine Yan, Milner 220) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 4170 M
+(3:00pm       ) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 4170 M
+(Prepare for talk) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 3775 M
+(4:00pm ) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1987 3775 M
+(Colloquium ) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont3p120000 SETFONT
+GS
+n
+2823 3775 M
+(-) 92 X
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont1p120000 SETFONT
+GS
+n
+2915 3775 M
+( Milner 317 ``) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont4p120000 SETFONT
+GS
+n
+3855 3775 M
+(Small Unitary Representations of ) 3300 X
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1987 3574 M
+(Semisimple Groups and Kirillov's Orbital Theory) 4700 X
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont1p120000 SETFONT
+GS
+n
+6687 3574 M
+(') ST
+-26 0 MR
+(') ST
+-26 0 MR
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 3195 M
+(6:30pm  ) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1987 3195 M
+(Dinner at Caf\351 Eccel with Drs. Al Boggess, Don Allen, and Bill Johnson) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont2p120000 SETFONT
+GS
+n
+990 2816 M
+(Thursday, February 8) ST
+GR
+GS
+0 11000 32000 -21000 DOCLIPBOX
+n
+990 2774 M
+2570 2774 L 
+8 setlinewidth
+0 setlinecap
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+S
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont1p120000 SETFONT
+GS
+n
+990 2437 M
+(8:30am) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1490 2437 M
+(Meet with Dr. Peter Stiller, Blocker 623F) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+990 2058 M
+(9:00am) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 2058 M
+(Meet with Dr. Michael Hall, Executive Associate Dean, Blocker 517) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+990 1867 M
+( ) 42 X
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1990 1867 M
+(Dr. Rojas will pick-up from Dean's office) 2801 X
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 1493 M
+(9:30am) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1476 1493 M
+(Meet with Dr. Jean-Luc Guermond, Blocker 507C) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 1114 M
+(10:00am) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1976 1114 M
+(Meet with Dr. Sara Witherspoon, Milner 323) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 735 M
+(10:30am) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1976 735 M
+(Meet with Dr. Bill Johnson, Milner 115) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 356 M
+(11:00am) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1976 356 M
+(Meet with Dr. J. M. Landsberg, Milner 329) ST
+GR
+%%PageTrailer
+AXPageSave restore
+showpage
+%%Page: 2 2
+%%BeginPageSetup
+save /AXPageSave exch def
+DOSETUP
+%%EndPageSetup
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+AXFont1p120000 SETFONT
+GS
+n
+976 10262 M
+(11:30am) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1976 10262 M
+(Meet with Dr. Colleen Robles, Milner 327) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 9883 M
+(12:00pm) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1976 9883 M
+(Lunch with Drs. Johnson, Rojas, Rowell, and Witherspoon) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 9504 M
+(1:00pm) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1976 9504 M
+(Meet with Dr. Eric Rowell, Milner 210) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 9125 M
+(1:30pm) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1976 9125 M
+(Dr. Rojas will take to airport) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+976 8746 M
+(2:55pm) ST
+GR
+0.0000 0.0000 0.0000 1.0000 SET_CMYK
+GS
+n
+1976 8746 M
+(Depart College Station on American Airlines 3286) ST
+GR
+%%PageTrailer
+AXPageSave restore
+showpage
+%%Trailer
+%%EOF
+

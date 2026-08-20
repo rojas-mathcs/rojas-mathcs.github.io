@@ -1,0 +1,44 @@
+<head><title>HKPLOT: Matlab Code for Visualizing Archimedean  
+Amoebae (and their Real Parts) in Dimension 2</title>
+
+<h1>
+HKPLOT: Matlab Code for Visualizing Archimedean  
+Amoebae (and their Real Parts) in Dimension 2
+</h1>
+<p> 
+<hr>
+
+<p>
+This is a preliminary release of some code for visualizing the 
+complex amoeba of a bivariate polynomial, along with the subset 
+consisting of the image of the positive or real roots.  
+More documentation will 
+appear soon but in the mean time please feel free to pester me. 
+<ul>
+<li><a href="hkplot.m">hkplot.m</a>: 
+usage: hkplot(a,cell,flip,piclim,res,cxres,fig,fold,cx,phasecolor); 
+<p>  where...
+<p>  
+a          = n x m support matrix
+<p>  
+ cell       = n-subset of [1,...,m] with det(a(:,cell)) odd...
+<p>  
+ flip   = possible flip of signs, for simplification/visualization purposes...
+<p>  piclim     = [minx,maxx,miny,maxy], for picture
+<p>  res        = density of points on parameter line
+<p>  
+ fig        = which figure for the picture
+<p>  
+ fold       = plot pos part, unfolded real part, or folded real part,
+<p>  
+              according as fold=0,1,2
+<p>  
+ cx         = plot the traditional complex amoeba too!
+<p>  
+ phasecolor = vary (or not) the interior color according to the phase
+<p>  
+              of the pre-image under the Horn-Kapranov uniformization,
+<p>  
+              according as 1 or 0
+</ul>
+<hr> 

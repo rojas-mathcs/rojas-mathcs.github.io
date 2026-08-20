@@ -1,0 +1,48 @@
+<body bgcolor="white">
+
+<head><title>Some Hacked Cyphertext!</title></head>
+
+<h2>MESSAGE FROM A HACKER...</h2>
+
+	Rojas sent the following 6 codewords over the internet: 
+ 
+   <p>  
+        9066027091219824298513449986118553002988790305321027283552034796
+
+   <p>  
+        7361215247404841448454010956840992006385887439392772488607208249
+ 
+   <p>  
+        7741227234934885472521182881642967656172536840157194459161934736
+
+   <p>  
+        1230585049842310811280493372932470836911773216728232867323432667
+
+   <p>  
+        1608475503104794697764404574733266569848426369384082730017962516
+
+   <p>  
+        7146425541155477335110998625118145503019049930913087789495844849
+
+
+   <p>  
+You should already know his public key.
+
+<p>
+	As for how he converted his original message into numbers 
+(BEFORE using RSA to get the above codewords), I figured out that 
+he did the following:  A -> 0, B -> 1, etc...  He then encoded  
+the ``comma'' as 26, the ``period'' as 27, and ``blank space'' 
+as 28.  (Not very original.)  He then grouped his characters into 
+blocks of 32 to form SIX very big decimal numbers.  (Each of these 
+large numbers was at most 64 decimal digits long.) The six ``plain-text'' 
+numbers were then put through RSA, giving the six ``cypher-text'' numbers 
+you see above. 
+
+<p>
+	He picked a product of two large primes for n, but he picked 
+those primes in a very simple way.  So you shouldn't have too much 
+trouble factoring n.  It looks like the only hard part is finding 
+d and doing the exponentiation.  So if you can implement that correctly, 
+you're home free...
+

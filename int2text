@@ -1,0 +1,14 @@
+function y=int2text(x)
+% This function takes an array of numbers in {1,...,42} and 
+% converts them sequentially into symbols as follows:  
+%  ... (per hw#1 from math 470, fall 2020...) 
+
+if ( (x <=1 ) | (x > 42) ),
+   error('Integer out of range {1,...,42}');
+end;
+
+s=size(x,2);
+y=[]; 
+for i=1:s
+ y=[y i2t(x(i))]; 
+end; 

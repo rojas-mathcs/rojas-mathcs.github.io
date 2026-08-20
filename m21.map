@@ -1,0 +1,74 @@
+with(numtheory):  
+p:=2^221-3:  
+f:=x->x^3+117050*x^2+x mod p: 
+
+# this duplication code is from the ellpack code of Jim Carlson...
+EDup := proc(f,P)
+    local a,b,c,lambda,x,y,numx,denx,fprimex,xx,yy;
+     a := coeff(f(x),x,2);
+     b := coeff(f(x),x,1);
+     c := coeff(f(x),x,0);
+     x := P[1]; y := P[2];
+     fprimex := subs(u=x,diff(f(u),u));
+     lambda := fprimex/(2*y);
+
+     numx := x^4 - 2*b*x^2 - 8*c*x + b^2 - 4*a*c;
+     denx := 4*(x^3 + a*x^2 + b*x + c);
+     xx := numx/denx;
+     yy := y + lambda*(xx-x);
+
+     RETURN( [xx,-yy] );
+ end:
+
+# the rest is by j. maurice rojas 
+xp:=(a,b)->(b[1]*a[2]-a[1]*b[2])^2/(a[1]*b[1]*(b[1]-a[1])^2) mod p: 
+yp:=(a,b)->(2*a[1]+b[1]+117050)*(b[2]-a[2])/(b[1]-a[1])-(b[2]-a[2])^3/(b[1]-a[1])^3-a[2] mod p: 
+
+pointp:=[1860581210531153189840924868614840055806903645915830363592282880108,1491700592716802334933699090180437462000499543213090086011778549947]: 
+pointq:=[2718613075266466090825820202093621969350769942654327954863295605337,
+3195722862807949667919624604244151897393423091154291838311393268556]: 
+# should be the case that P=-63Q.  
+
+specelpow:=proc(n,point)
+ local i , flip , mx , my , nn , nextx , nexty, nextz , px , py , powpow , powx , powy , cabo , notyet , b:  
+ 
+ description "compute [n](px,py) on the montgomery curve for take-home midterm#2": 
+
+ nn:=n: flip:=0: cabo:=0: px:=point[1]: py:=point[2]: 
+
+ if nn<0 then 
+  flip:=1: nn:=-nn: 
+ end: 
+
+ if nn=0 then 
+  mx:=undefined: my:=infinity: cabo:=1: 
+ elif nn=1 then 
+  mx:=px: my:=py: cabo:=1: 
+ else  
+  powx:=px: powy:=py: 
+  if ((nn mod 2)=1) then 
+   mx:=px: my:=py: notyet:=0: 
+  else  
+   notyet:=1: 
+  end:   
+  nn:=floor(nn/2): 
+ end: 
+ 
+ while cabo<>1 do 
+  powpow:=EDup(f,[powx,powy]) mod p: powx:=powpow[1]: powy:=powpow[2]: 
+  if ((nn mod 2)=1) then 
+   if notyet=1 then 
+    mx:=powpow[1]: my:=powpow[2]: notyet:=0: 
+   else 
+    nextx:=xp(powpow,[mx,my]): nexty:=yp(powpow,[mx,my]): 
+    mx:=nextx: my:=nexty: 
+   end: 
+  end: 
+  nn:=floor(nn/2): if nn=0 then cabo:=1: end: 
+ end:  
+ 
+ if flip=1 then my:=-my mod p: end: 
+
+ return([mx,my]):  
+
+end proc:  

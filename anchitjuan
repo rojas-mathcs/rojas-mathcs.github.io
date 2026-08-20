@@ -1,0 +1,54 @@
+Dear Anchit and Juan,
+
+	Thank you for your questions today.
+
+	I was hoping to include the proofs of the Weak FTA and Descartes' 
+Bound in my book draft but didn't have time today due to some meetings 
+and talks.  So here is a quick text version.  (I'll insert an improved 
+version in my book draft and circulate that a bit later...) 
+
+	In what follows, we let f be a univariate polynomial in C[x] of 
+degree d.  Also, we'll write deg(g) for the degree of a polynomial g. 
+
+############################################################################	
+PROOF OF WEAK FTA: 
+  	First note that, given any complex number w, we can try to 
+        divide f(x) by x-w. By simple long division, this gives us a 
+quotient q and a remainder r, which are also polynomials in one variable. 
+In other words, 
+
+                f(x) = (x-w)q(x) + r(x)
+
+with deg(r)<deg(f).  So r must either be a constant or a degree 1 polynomial. 
+Note now that if w is a root of f, then substituing x=w into the equation 
+above yields: 
+
+                f(w) = 0 + r(w) = 0 
+
+since f(w)=0. In other words, the remainder must either be the constant 
+0 or a nonzero multiple of x-w.  But the latter possibility is impossible 
+by the defintion of remainder in long division.
+
+	We thus obtain that (x-w) divides f(x) for any root w. Since 
+the degree of f is d, f must have no more than d complex roots and we are 
+done.  QED 
+############################################################################
+PROOF OF DESCARTES' BOUND: 
+       First note that a monomial can have no positive roots (its only 
+root is 0). Also note that a binomial can have at most 1 positive root, thanks 
+to HW#1 Problem #1.  So let us now assume that f has just real coefficients 
+and exactly m>2 monomial terms. 
+
+       We proceed by induction. In particular, our induction hypothesis 
+is that Descartes' Bound is true for any univariate real m-nomial with m>=2. 
+Let us now try to prove Descartes' Bound for any univariate real (m+1)-nomial 
+f. First note that f(x) has the same positive roots as f(x)/x^a where a is the 
+least exponent in f. So we may assume that f has a nonzero constant term.  
+Observe then that f' is an m-nomial, and thus has at most m-1 positive roots 
+by our induction hypothesis. 
+
+      To conclude, note that between any 2 consecutive positive roots of 
+f, there must be a root of f', thanks to Rolle's Theorem. Therefore, f 
+has at most m positive roots and we are done.  QED 
+
+

@@ -1,0 +1,31 @@
+CC: the.keysers@verizon.net
+Subject: C++ codes
+Reply-to: kouchi@cs.tamu.edu
+Status: R
+Content-Length: 800
+
+I have just found a lot of unread e-mails...
+
+I put the C++ codes I wrote on frida.cs.tamu.edu until Thursday. There
+are still a lot of bugs and ideas to speed up which I did not have a
+time to implement.
+
+Res.tar.gz: Computing sparse resultants and RUR using Emiris's
+algorithms. Implemented only using linear algebra. Thus,
+exact. Aberth's method to approximate roots is IMPERFECT and
+unreliable. Khetan's "new" algorithms (the one produces matrices w/o
+the block of 0's at right bottom corner) is not working
+correctly. (Sorry! But, it is not easy to modify Maple code w/o being
+able to run it!)
+
+bires.tar.gz:
+Maple code to compute Khetan's new algorithm.
+
+I will send the archive of PDF's this noon by an e-mail.
+
+I will be in my office (5-2066) until tonight.
+
+Thank you very much.
+
+Koji Ouchi
+

@@ -1,0 +1,85 @@
+<HTML>
+
+<BODY BGCOLOR="White">
+
+
+<H2><FONT COLOR=GREEN>Guest-book</FONT></H2>
+Sign the guest book and tell me something about yourself.
+
+ <FORM METHOD=post ACTION="mailto:mamrojas@math.cityu.edu.hk">
+ <INPUT TYPE="Hidden" NAME="book" VALUE="~mas/htp/guestbook">
+ <INPUT TYPE="Hidden" NAME="page" VALUE="HTML">
+ <INPUT TYPE="Hidden" NAME="back" 
+        VALUE="http://snowwhite.it.brighton.ac.uk/~mas/mas/courses/html/html.htm">
+
+ <TABLE>
+   <TD>Your name</TD>
+   <TD>
+     <SELECT NAME="name-title">
+             <OPTION SELECTED>Mr
+             <OPTION> Ms
+     </SELECT> 
+     <INPUT TYPE="text" NAME="name" SIZE=30 VALUE="">
+  </TD>
+
+ <TR>
+   <TD>Your e-mail address</TD>
+   <TD> <INPUT TYPE="text" NAME="e-mail" SIZE=40 VALUE=""></TD>
+
+ <TR>
+   <TD>About yourself</TD>
+   <TD> 
+     <SELECT NAME="who">
+             <OPTION SELECTED> Computing professional
+             <OPTION> Surfer
+             <OPTION> Student
+             <OPTION> Other
+     </SELECT> detail:
+   <INPUT TYPE="text" NAME="who-cont" SIZE=20 VALUE=""></TD>
+
+ <TR>
+   <TD>Comments about this site, about yourself</TD>
+   <TD><TEXTAREA NAME="comment" VALUE="" ROWS=5 COLS=60> </TEXTAREA></TD>
+
+ <TR>
+   <TD>Sign guest book</TD>
+   <TD><INPUT TYPE="submit" NAME="Button" VALUE="Now"></TD>
+ </TABLE>
+
+
+
+ </FORM>
+
+
+<HR>
+The CGI guest book program is implemented in C++. 
+The source code for the program is contained in the following 4 files:
+<FONT COLOR="Green">
+<A HREF="../cgi/guestbook.cpp">guestbook.cpp</A> *
+<A HREF="../cgi/parse.h">parse.h</A> *
+<A HREF="../cgi/parse.cpp">parse.cpp</A> *
+<A HREF="../cgi/t99_type.h">t99_type.h</A>
+<FONT>
+<HR>
+<FONT COLOR=#808080>
+&#169; M.A.Smith University of Brighton.
+Created March 1997 last modified March 1997.
+<BR>
+ <I>
+  Comments, suggestions, etc. 
+  <A HREF="mailto:M.A.Smith@brighton.ac.uk">
+  M.A.Smith@brighton.ac.uk
+  </A>
+ </I>
+ *
+ <A HREF="http://snowwhite.it.brighton.ac.uk/~mas" TARGET="_top">
+ [Home page]</A>
+  <A HREF="http://snowwhite.it.brighton.ac.uk/cgi-bin/mas/mas_rec?page=mas&file=~mas/htp/mas_logs">
+  [CGI Environment variables]</A>
+ <IMG SRC="http://snowwhite.it.brighton.ac.uk/cgi-bin/mas/mas_rec?page=HTML&file=/usr/export/home/snowwhite/staff/mas/htp/mas_logs&img=", ALT=CGI>
+ </A>
+</FONT>
+
+</BODY>
+
+</HTML>

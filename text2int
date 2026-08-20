@@ -1,0 +1,14 @@
+function y = text2int(x)
+% This function takes the letter in the string x and converts 
+% it to an integer. 
+% The convention for this function is
+%     --> 2
+%   ' --> 3 
+%   and so on...
+
+s=size(x,2); 
+y=zeros(1,s); 
+for i=1:s 
+ y(i)=t2i(x(i)); 
+end; 
+

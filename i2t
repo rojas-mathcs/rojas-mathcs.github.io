@@ -1,0 +1,26 @@
+function y = i2t(x)
+% This function takes an integer and converts it to 
+% a symbol... 
+% The convention for this function is
+%   1 --> * 
+%   2 --> 
+%   3 --> ' 
+%   and so on...
+
+if (x<=0)|(x>=43)  
+ error('Number out of range {1,...,42}!'); 
+elseif x==1; 
+ y='*'; 
+elseif x==2; 
+ y=' '; 
+elseif x==3;  
+ y='''';
+elseif ((x>=4)&(x<=6))  
+ y=char(x+40);  
+elseif ((x>=7)&(x<=16)) 
+ y=char(x+41);               % / is missing...
+elseif ((x >= 17)&(x <= 42)) 
+ y=char(x+80); 
+end;
+
+% y=x - 'a';   %It helps to know Matlab tricks

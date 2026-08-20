@@ -1,0 +1,91 @@
+From Bernard.Mourrain@sophia.inria.fr  Tue Apr 15 11:47:40 2003
+Return-Path: <Bernard.Mourrain@sophia.inria.fr>
+Received: from arz.inria.fr (IDENT:root@arz.inria.fr [138.96.116.10])
+	by radon.math.tamu.edu (8.11.6/8.11.6) with ESMTP id h3FGldM20928
+	for <rojas@math.tamu.edu>; Tue, 15 Apr 2003 11:47:40 -0500
+Received: from arz.inria.fr (mourrain@localhost)
+	by arz.inria.fr (8.12.8/8.12.5) with ESMTP id h3FGlSDI009998;
+	Tue, 15 Apr 2003 18:47:29 +0200
+Message-Id: <200304151647.h3FGlSDI009998@arz.inria.fr>
+X-Mailer: exmh version 2.5 07/13/2001
+To: gregorio@labma.ufrj.br, rojas@math.tamu.edu
+cc: "Bernard Mourrain" <Bernard.Mourrain@sophia.inria.fr>,
+   "Ioannis Z. Emiris" <emiris@di.uoa.gr>,
+   "Prof. Victor Pan" <vpan@alpha.lehman.cuny.edu>
+Subject: TCS paper
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Tue, 15 Apr 2003 18:47:28 +0200
+From: Bernard Mourrain <Bernard.Mourrain@sophia.inria.fr>
+Status: R
+Content-Length: 2606
+
+
+Dear Gregorio and Maurice 
+ We are happy to accept your paper 
+High probability analysis of the condition number of 
+       sparse polynomial systems
+submitted to the TCS special issue.
+ 
+Please send us the final version of your paper before May 15th, 
+udpated according to the referee comments (see below). 
+
+It would be appreciated if you could use the TCS format (see "Guide for Authors" at
+http://authors.elsevier.com/JournalDetail.html?PubID=505625&Precis=DESC.
+
+You may also furnish us with a few introductory sentences that we may
+use in the preface to our issue, describing the relevance of your paper
+to the subject of Numeric-algebraic algorithms.
+ 
+Thank you again for your submission,
+
+
+Bernard
+
+
+-------------------------------------------------------------------------------------
+This paper is directed towards extending the theory of the condition
+number to sparse systems of polynomial equations.  In general terms,
+this is potentially of great interest, since in practice most systems
+of interest are sparse.  While I cannot say whether the long run goal,
+namely a theory of the complexity of sparse homotopy methods, is
+likely to be attained, it certainly strikes me as a very useful
+contribution.
+
+At any rate the current version has various defects of authorship.
+(As someone afflicted with ``proof reader's blindness,'' I have great
+sympathy.)  It seems clear that the next step is to fix these.  The
+ones that I found (which give some indication of how far I was able to
+read) are detailed below.
+
+\def\booboo#1{\medskip \itemitem{($\bullet$)} #1}
+
+\booboo{
+At the point where Theorem 2 is stated, the way that $(A_1, C_1,
+\ldots, A_n, C_n)$ determine a random polynomial system has not been
+described.  Similarly, in Definition 3 the status of $C$ is unclear.}
+
+\booboo{
+In Example 3, it appears that $C$ should be an $M \times M$ matrix.}
+
+\booboo{
+Example 3 refers to ``the above lemma,'' but there is no earlier
+lemma.}
+
+\booboo{
+At the end of Example 3 there is appears to be a typo in the first
+element of the triple.}
+
+\booboo{
+In the statement of Lemma 1, it seems that the conclusion holds for
+all $p \in {\bf C}^n$.  Also, Lemma 1 refers to $v_A$, but this
+function is not defined until the next page.  In addition, the
+notation $P_{v_A(p)}$ is undefined.}
+
+\booboo{
+Though not a logical flaw, it would clearly be an improvement to place 
+the definition of ${\hat V}_A$ in Example 3 and the assertion of Lemma 
+2 in displayed equations.  The latter should be concluded with a period.}
+
+-------------------------------------------------------------------------------------
+

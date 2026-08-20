@@ -1,0 +1,51 @@
+# j. maurice rojas, mar. 9, 2017
+# this short program picks a random a in {1,...,n-1} 
+# and checks if it is a miller-rabin witness. this 
+# code is far from optimal and is meant more to 
+# familiarize the reader with maple syntax than to 
+# be elegant.  : ) 
+
+n:=172947529;  # example1
+
+# n:=622288097498926496141095869268883999563096063592498055290461; # example2
+
+#  n := 127536587059848552564790095500160708695457833641416263171762398330267983365550211308910941805461159945947024273103825623764236065204421727414482691703159412729513690774618306375341; # example3 
+
+# n :=  643808006803554439230129854961492699151386107534013432918073439524138264842370630061369715394739134090922937332590384720397133335969549256322620979036686633213903952966175107096769180017646161851573147596390153; # example4
+
+with(numtheory): # call in the number theory library 
+with(padic):     # call in the p-adic library (here, just for the ord command)
+
+randoma:=rand(1..(n-1)): # define function that generates random numbers 
+                         # in {1,...,n-1}
+
+ord2:=ordp(n-1,2);       # find exponent of largest power of 2 dividing n-1
+                         #  and print it out...
+q:=(n-1)/2^ord2:         # extract odd part of n-1. 
+
+a:=randoma(); # pick and write out a random a 
+a:=Power(a,q) mod n:      # replace a by value of a^q mod n 
+w:=[a]: len:=1: fail:=0:  # initialize list of powers to be computed, 
+                          # length of list of powers, and assume no 
+                          # failure in search for a witness (so far)... 
+
+# this outer if/elif/end block checks whether a^q is 1 or not... 
+#  NOTE: value of a was reset to a^q mod n, hence use of a below...
+if (a<>1 mod n) then             
+ for i from 1 to (ord2-1) do # main loop for computing powers 
+  if (a<>-1 mod n) then      
+   a:=a^2 mod n: 
+   w:=[seq(w[j],j=1..len),a]: len:=len+1: 
+  elif (a=-1 mod n) and (fail=0) then     
+   print("a is not a witness"): fail:=1: 
+  end: 
+ end: 
+elif (a=1 mod n) then 
+ print("a is not a witness..."): fail:=1: 
+end if: 
+
+if fail=0 then 
+ print("a is witness! Values of a^q, a^{2q},..., a^{2^{k-1} q} below:"): 
+ print(w): 
+end: 
+

@@ -1,0 +1,29 @@
+DEar Maurice,
+
+   Frederic and I had a very successful weekend of work this past
+weekend.   We first of all sorted out exactly the relation between
+the unusual system of k polynomials in k unknowns that one gest from
+a system of n polynomials in n+1+1 monomials.  It is actually 
+quite interesting, and I wonder if this `Gale Duality' makes sense for 
+k>n.  [It requires k<n, for now].
+
+  We also found a bound of 2n^2 + (n+1)(n+2)/2 (the last factor is the
+greatest integer below (n+2)/2) for positive solutions to a system 
+in n variables with n+2+1 monomials.  We think there may be a further
+improvement in the coefficient of the linear term.
+
+  This works as usual (via frederic's improvement of the Morse theory 
+argumant) for the components (or Betti numbers?) of a hypersurface.
+
+  We had some ideas, but did not yet have a breakthrough for the 
+systems of n polynomials in n+k+1 mononials.
+Attached are .jpg files which are pictures of the board we used
+for our computations.
+
+   Likely Frederic and I will stary to write up these preliminary
+results, to clear some of the details.  (Paragraph 2 is clean,
+the bound that is, it is the first--Gale Duality and t
+hird---hypersurface that need clearing up.
+
+-Frank
+

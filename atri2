@@ -1,0 +1,37 @@
+# this is code to generate the 
+# discriminant of 
+# 
+# x^6+ay^3+y=0 
+# y^6+bx^3+x=0
+#
+# the degree of the resultant of 
+# GENERIC polys with support = 
+# (supp(f),supp(g),suff(Jac(f,g))) 
+# should be 35+45+45=125, and this implies that 
+# the degree of the resulting principal 
+# A-determinant should be <= 35*2+45+45=160... 
+# 
+# ...thus it would appear to imply that rr2 (the 
+# degree 90 factor below, not the degree 485 factor) 
+# is the discriminant I want! 
+#
+# incidentally, the calculation took 3h22m6.251s 
+# on thelonius! 
+# 
+
+f:=x^6+a*y^3+y;  
+g:=y^6+b*x^3+x;
+fx:=diff(f,x); fy:=diff(f,y);
+gx:=diff(g,x); gy:=diff(g,y);
+j:=simplify(fx*gy-fy*gx);
+
+r1:=resultant(f,j,x);
+r2:=resultant(g,j,x); 
+
+rr:=factor(resultant(r1,r2,y));
+rr1:=op(1,rr); rr2:=op(2,rr); rr3:=op(3,rr);  
+
+
+
+
+

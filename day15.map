@@ -1,0 +1,41 @@
+# j. maurice rojas, oct. 8, 2020 
+# this short program sees how often you get a prime 
+# after picking N random odd integers in {1,...,99}...
+# 
+# Usage: After saving the file day15.map , run Maple 
+#        in the same directory, and then say 
+#
+#                 read("day15.map"); 
+# 
+#        You should see a number around 0.33 . 
+#        This is what Maple finds after running a simple 
+#        experiment 5000 times and computing the proportion 
+#        of successes. (The experiment is picking random 
+#        odd numbers in {1,...,1000}, at most 4 times, until 
+#        it gets a prime.) Every time you run the program, 
+#        Maple tries another 5000 times.  
+
+N:=4:   
+
+p:=1+2*rand(500): 
+
+tot:=0: numtry:=5000: 
+
+for i from 1 to numtry do 
+
+ j:=1: noprime:=true: 
+ while (j<=N and noprime) do 
+
+  fry:=p(): 
+  if isprime(fry) then 
+   noprime:=false: 
+   # printf("%d ",fry): 
+  end: 
+  j:=j+1: 
+ end: 
+
+ if not(noprime) then tot:=tot+1 end: 
+
+end: 
+
+1.*tot/numtry; 

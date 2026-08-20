@@ -1,0 +1,35 @@
+# J. Maurice Rojas, Jan. 15, 2002
+# Happy New Year!
+# 
+# Last update: Apr. 7, 2003 
+#
+
+Digits:=40; 
+
+c:=exp(1)/(exp(1)-1) ; 
+
+addd:=(d,p,s)-> if s=0 then 1 # monos have at most one affine root 
+        elif s=1 then 1+ d*p*(p^d-1)/(p-1) # binoms have at most 1+B(L,2,1) roots...
+        elif s=2 then 1+d*p*(p^d-1)*(1+4*c*(p^d-1)*(1+d*log(2*d/log(p))/log(p)))/(p-1) # really 1+B(L,2,1)+B(L,2,1)B(L,3,1) 
+        else 1+d*p*(p^d-1)*(1+4*c*(p^d-1)*(1+d*log(2*d/log(p))/log(p)))/(p-1) + sum((p^d-1)^k *floor(k*6^(k-1)*c^k*(1+d*log(d/log(p))/log(p)) *(1+d*log(2*d/log(p))/log(p))^(k-1) * (k!)),k=3..s); 
+        end if: 
+
+ad:=(d,p,s)-> addd(d,p,s) : 
+
+addd2:=s-> if s=0 then 1 # monos have at most one affine root 
+        elif s=1 then 1+ 2 # binoms have at most 1+B(L,2,1) roots...
+        elif s=2 then 1+2*(1+6) # really 1+B(L,2,1)+B(L,2,1)B(L,3,1) 
+        else 15 + sum(3^(k-1) * floor(k*2^(k-1)*c^k*(1-log(log(2))/log(2)) *(2-log(log(2))/log(2))^(k-1) * (k!)),k=3..s); 
+        end if: 
+
+ad2:=s-> addd2(s) : 
+
+# ad(s) is our bound from theorem 4... 
+# ad2(s) is the bound refined with the lenstra p=2 info...
+printf("The additive complexity bound from Theorem 1 reduces to\n %d , %d , %d , %d , %d, respectively, for\n sigma = %d , %d , %d , %d , %d\n When p=2 and d=1.\n\n", ad2(0),ad2(1),ad2(2),ad2(3),ad2(4),0,1,2,3,4) ; 
+
+# simplified version below...
+
+# Risler's bound below...
+risler:= s-> (s+2)^(3*s+1)*2^((9*s^2+5*s+2)/2); 
+

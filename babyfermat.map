@@ -1,0 +1,14 @@
+# copyright 2017, j. maurice rojas
+
+with(numtheory): Digits:=200:  
+
+N:=152415787205608915319: 
+
+for a from 1 to 35 do 
+ b:=(N+a^2)^.5: 
+ t:=trunc(b): 
+ if (b=t) then 
+  bb:=sqrt(N+a^2): 
+  print(bb,"+-",a," is a factor!"): 
+ end: 
+end: 

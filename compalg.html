@@ -1,0 +1,135 @@
+<head><title>One of Prof. J. Maurice Rojas' Research Interests: Computational 
+Algebraic Geometry</title>
+
+<h2>COMPUTATIONAL ALGEBRAIC GEOMETRY</H2> 
+
+<p>I view computational algebraic geometry in the broadest possible sense:  
+the interplay between algorithms and equations, considering solutions 
+over any underlying ring. In particular, the computational nature 
+of equation solving changes tremendously as one considers 
+complex solutions, real solutions, rational solutions, and integer solutions, 
+and I explore many of these questions. 
+
+<h3>Algebraically Closed Fields</h3> 
+
+<p>Let us first consider a system of polynomial equations, F, over the 
+complex numbers. One can then ask some basic questions about its  
+set of complex solutions Z: 
+<li>1. What is the (complex) dimension of Z?
+<li>2. If Z is finite, what is its cardinality? 
+<li>3. If Z is finite, can one approximate the coordinates of the 
+points in Z in a fast <b>and</b> certifiably accurate way?  
+<li>4. What is the algorithmic complexity of all the above questions? 
+
+<p> 
+It still surprises me that, after centuries of algebraic geometry 
+and a tremendous revolution in the subject during the 20th century, 
+(3) and (4) still lack definite answers. 
+
+<p>  
+Some of my papers revolve around the above questions and give 
+fast algorithms and complexity lower bounds. For instance, 
+improving recent work of Koiran, I was able to find an 
+algorithm which gives the best current complexity bound 
+for Problem (1). (Koiran does so under the assumption of the 
+Generalized Riemann Hypothesis while I just showed that one 
+can rely on an even more plausible hypothesis, which is 
+likely provable with current technology.) This is covered in 
+the following paper:  
+
+<p>
+<li> J. Maurice Rojas, <a href="/~rojas/abstracts.html#dzh">``Dedekind Zeta 
+Functions and the Complexity of Hilbert's Nullstellensatz,''</a>  
+paper corresponding to semi-plenary talk at FoCM 2002 (August 5-14, 2002, 
+University of Minnesota, Minneapolis), submitted for publication. 
+
+<p> As for Problems (2) and (3), a beautiful discovery made close to three   
+decades ago has resulted 
+in some deep connections between convex geometry and polynomial systems. 
+This began with work of A. Kouchnirenko, David N. Bernstein, and A. 
+Khovanskii relating the ``average'' number of complex roots of a sparse 
+polynomial system with, of all things, mixed volumes of polytopes. 
+Part of my recent work deals with refining and generalizing this 
+combinatorial approach to polynomial systems, and making it 
+algorithmic and practical. For example, in the following papers: 
+<li> 
+Gregorio Malajovich and J. Maurice Rojas, <a
+href="/~rojas/abstracts.html#high">``High Probability Analysis of
+the Condition Number of Sparse Polynomial
+Systems,''</a> Theoretical Computer Science, to appear
+<li> 
+John Junkins, Daniele Mortari, and J. Maurice Rojas, <a
+href="/~rojas/abstracts.html#la">``Attitude and Position Estimation from
+Vector Observations (extended abstract),''</a> Proceedings of the AAS/AIAA
+Space Flight Mechanics Meeting (February 8-12, 2004, Maui, Hawaii),
+to appear. 
+
+<br> 
+...we describe a modern approach to polynomial system solving 
+based on toric/symplectic geometry, and apply it to a fundamental 
+problem in space flight. An expository article I wrote on the application 
+of toric geometry to polynomial system solving is the following paper: 
+<li> J. Maurice Rojas, <a href="/~rojas/abstracts.html#mi">``Why Polyhedra
+Matter in Non-Linear Equation Solving,''</a> paper corresponding to an invited
+talk delivered at a conference on Algebraic Geometry and Geometric Modelling
+(Vilnius, Lithuania, July 29-August 2, 2002), <cite>Contemporary Mathematics,
+AMS Press</cite>, vol. 334, pp. 293-320, 2003.
+<br> 
+...and a paper containing explicit complexity bounds for solving arbitrary  
+polynomial systems (some of them still the sharpest asymptotically), is 
+the following: 
+<li> J. Maurice Rojas, <a href="/~rojas/abstracts.html#gcp">``Solving 
+Degenerate Sparse Polynomial Systems Faster,''</a> 
+Journal of Symbolic Computation, vol. 28 (special issue on elimination 
+theory), no. 1/2, July and August 1999, pp. 155-186. 
+
+
+<h3>Real Closed Fields</h3> 
+Consider now a system of polynomial equations F defined over the 
+real numbers. One can then revisit the questions we raised above: 
+<li>1'. What is the (real) dimension of Z?
+<li>2'. If Z is finite, what is its cardinality?
+<li>3'. If Z is finite, can one approximate the coordinates of the
+points in Z in a fast <b>and</b> certifiably accurate way?
+<li>4'. What is the algorithmic complexity of all the above questions?
+
+<p>
+Curiously, even Problem (2') lacks a satisfactory answer: While it 
+is now known, thanks to seminal work of Askold Khovanski, that 
+the number real roots of F depends only weakly on the degree of the 
+underlying equations, optimal bounds are an open question of the 
+utmost interest. In particular, Khovanski's famous Theorem on Real 
+Fewnomials (from the early 1980's) implies that the number of real 
+roots can be bounded from above by a quantity depending only on the 
+number of variables and monomial terms.
+
+<p> 
+However, the Theorem on Real Fewnomials is far from optimal: 
+For the special case where F has 2 unknowns, and 2 equations with 
+3 monomial terms each, the Theorem on Real Fewnomials implies that 
+F has no more than 284832 roots in the positive quadrant. But the 
+correct sharp upper bound is 5. This, and much more, was first 
+observed in the following paper: 
+<li>
+Tien-Yien LI, J. Maurice Rojas, and Xiaoshen WANG,
+<a href="/~rojas/abstracts.html#tri">
+Counting Real Connected Components of Trinomial Curve Intersections and
+m-nomial Hypersurfaces</a>,
+<a href="http://www.springerlink.com/app/home/journal.asp?wasp=2g5kvnqgml4he1lp8
+fvk&referrer=parent&backto=linkingpublicationresults,id:100356,1">
+<cite>Discrete and Computational Geometry</cite></a>, <b>30 (2003), no. 3</b>,
+pp. 379-414. 
+
+There is thus reason to believe that one should be able to solve 
+polynomial systems over the real numbers <b>much</b> faster than 
+the traditional algorithms over the complex numbers. Further 
+evidence appears in the following paper: 
+<li> J. Maurice Rojas and Yinyu Ye, <a href="/~rojas/abstracts.html#sol">
+``On Solving Fewnomials Over an Interval in Fewnomial Time,''</a>
+<cite>Journal of Complexity</cite>, to appear.
+
+I continue to work on these questions, which have deep impact on 
+equation solving in practice.
+
+<hr>
+

@@ -1,0 +1,21 @@
+function y = t2i(x)
+% This function takes the letter in the string x and converts 
+% it to an integer. 
+% The convention for this function is
+%     --> 2
+%   ' --> 3 
+%   and so on...
+
+if x==' '
+ y=2; 
+elseif x==''''  
+ y=3;
+elseif ((x>=',')&(x<='.'))  
+ y=x-40; 
+elseif ((x>='0')&(x<='9')) 
+ y=x-41;                    % / is missing...
+elseif ((x >= 'a')&(x <= 'z')) 
+ y=x-80; 
+end;
+
+% y=x - 'a';   %It helps to know Matlab tricks

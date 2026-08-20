@@ -1,0 +1,108 @@
+# J. Maurice Rojas, Oct. 31, 2001
+# Happy Halloween!
+# 
+# Last update: Jan. 27, 2003  
+#
+
+c:=exp(1)/(exp(1)-1) ; 
+u:=(m,n)-> if n=1 then m-1 
+              elif n=2 then max(m-2,3*m-9)^2 
+              else ((m+1-n)*(m-n)/2)^n  
+           end if; 
+
+# the function below gives the maximal 
+# number of edges for a 3-polytope in R^3 
+# with m vertices...
+e:= m-> if m=1 then 0 
+      elif m=2 then 1 
+      elif m=3 then 3 
+      else 3*(m-2) 
+      end if : 
+           
+E:=(m1,m2)-> e(m1)*e(m2) : 
+
+ff:= (m1,m2)-> E(m1,m2)*floor(c^2*2^2*(m1-1)*(1+log((m1-1)/log(2))/log(2))*(m2-1)*(1+log((m2-1)/log(2))/log(2))): 
+
+f:= (m1,m2)-> ff(m1,m2) : 
+
+gg:= (m,n)-> u(m,n)*floor((c*(m-n)*n*(1+log((m-n)/log(2))/log(2)))^n) : 
+
+g:= (m,n)-> gg(m,n) : 
+
+h:= m-> 4*(2^m-2) : 
+
+# f is the bound for B(Q_2,m,2) (assuming 2 equations 
+#  where the first has m1 terms and the second has m2 terms) from corollary 1. 
+# g is the bound for B(Q_2,m,n) from theorem 1. 
+# h is the real analytic bound mentioned in example 1.
+# double-letter versions are the same thing without the floor...
+
+Digits:=4; 
+
+printf("The bound from Example 1 of the introduction (Pg. 3) should read something like...\n"); 
+evalf(gg(m+2,2));
+
+printf("The bound from Remark 7 of Section 3 (Pg. 14) should read something like...\n");
+evalf(ff(3,m));
+
+printf("The bound from Example 6 of Section 3.1 (Pg. 15) should be...\n");
+evalf(ff(3,2));
+
+
+# asymptotically, f<g<h, but this doesn't really kick  
+#  in until after a certain point...
+
+Digits:=30: 
+
+# f finally starts beating g at m=3...
+printf("Corollary 1 beats Theorem 1 (but not Real Analytic) already at m=3:\n cor1 = %d , thm1 = %d , realanalytic = %d\n\n",f(3,3),g(3+2,2),h(3)); 
+
+# not to mention m=4...
+printf("...not to mention m=4:\n cor1 = %d , thm1 = %d , realanalytic = %d\n\n",f(4,3),g(4+2,2),h(4)); 
+
+
+# f finally starts beating h at m=18...
+printf("Corollary 1 finally starts beating Real Analytic at m=18:\n cor1 = %d , realanalytic = %d\n\n",f(3,18),h(18)) ; 
+
+# g doesn't start beating h until m=30...
+printf("Theorem 1 doesn't start beating Real Analytic until m=30:\n thm1 = %d , realanalytic = %d\n\n", g(30+2,2) , h(30)) ; 
+
+# additive complexity bound from quoted thm 4...
+# in what follows, we use the fact that B(Q_2,2,1)=2
+# and B(Q_2,3,1)=6... 
+
+c1:=1-log(log(2))/log(2) : 
+c2:=1+c1 : 
+bm1:=m-> (m-1)*floor(c*(m-1)*(1+log((m-1)/log(2))/log(2))):# this is B(L,m,1)...
+
+# Below is B(L,m,n) in the special case of (3,...,3,2) for the 
+# vector of monomial terms, and (2,3,4,...,s,s) for the number 
+# of variables occuring in the ith poly... 
+bq322ss:=s-> 3^(s-1)*floor(c^s * (2*2*c2)*(1*s*c1)*product(2*k*c2,k=3..s));  
+# bq322ss:=s-> 3^(s-1) *c^s * (2*2*c2)*(1*s*c1)
+#   *product(2*k*c2,k=3..s);  
+
+addd:=s-> if s=0 then 1 # monos have at most one affine root 
+        elif s=1 then 1+2 # binoms have at most 1+B(Q_2,2,1) roots...
+        elif s=2 then 1+2+2*6 # really 1+B(Q_2,2,1)+B(Q_2,2,1)B(Q_2,3,1) 
+        else 1+2+2*6+sum(bq322ss(k),k=3..s); 
+        end if: 
+ad:=s-> floor(addd(s)) : 
+
+# ad(s) is our bound from theorem 4... 
+printf("The additive complexity bound from Theorem 4 reduces to\n %d , %d , %d , %d , %d, respectively, for\n sigma = %d , %d , %d , %d , %d\n\n", ad(0),ad(1),ad(2),ad(3),ad(4),0,1,2,3,4) ; 
+
+# simplified version below...
+Digits:=4: 
+cc:=6*c2*c: 
+ccc:=c1*c/(cc-1):
+printf("The simplified bound from Theorem 4 should read something like...\n") ; 
+evalf(15+ccc*cc^sigma*sigma*sigma!); 
+
+# Risler's bound below...
+risler:= s-> (s+2)^(3*s+1)*2^((9*s^2+5*s+2)/2): 
+
+Digits:=30:  
+printf("Risler's best bound for sigma = 0,1,2,3,4 (after Theorem 4 on Pg. 9)\n reduce to... %d , %d , %d , %d ,\n and %d\n",risler(0),risler(1),risler(2),risler(3),risler(4)) ; 
+
+

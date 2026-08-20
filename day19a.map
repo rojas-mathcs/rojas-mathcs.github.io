@@ -1,0 +1,27 @@
+# j. maurice rojas, mar. 23, 2017
+# this short program tries to find a random 160-digit 
+# pseudo-prime via miller-rabin certificates. 
+# it tries numprimepics many random 160-digit odd numbers, and 
+# uses up to numwitpicks many random a to find a miller-rabin certificate...
+findp:=proc(numprimepicks,numwitpicks) 
+
+local foundpseudoprime,n,putp,q,randomp: 
+
+# want a random 160-digit odd number p. this means 
+# p is in {10^159+1,...,10^160-1}, or, 2{(10^159)/2,...,(10^160-2)/2}+1
+randomp:=2*rand((10^159/2)..((10^160-2)/2))+1:  
+
+foundpseudoprime:=0: n:=numprimepicks: 
+
+while (foundpseudoprime=0 and n>0) do  
+ n:=n-1: putp:=randomp(): 
+ foundpseudoprime:=testp(putp,numwitpicks): 
+end:
+
+if foundpseudoprime=1 then  
+  print(["...after ",numprimepicks-n," tries!"]); 
+ else  
+  print("Sorry, couldn't find a pseudo-prime after ",numprimepicks," tries.");
+end: 
+
+end proc: 

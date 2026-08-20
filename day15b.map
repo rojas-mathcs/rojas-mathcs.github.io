@@ -1,0 +1,80 @@
+# j. maurice rojas, oct. 8, 2020
+#
+# This short program supplies an implementation, newtestp, of the Miller-Rabin 
+# compositeness test that another program (findp, in the file day15a.map) will 
+# call. This implementation of Miller-Rabin assumes the Generalized 
+# Riemann Hypothesis, by applying a theorem of Miller/Bach/Shallit:
+# It tests whether putp is a prime by checking whether any of the 
+# numbers a in {2,...,2(log putp)^2} is a Miller-Rabin witness. 
+# Thanks to a theorem of Miller/Bach/Shallit, the truth of the Generalized 
+# Riemann Hypothesis implies that if *NONE* of these a is a witness, then 
+# the number putp is prime. For instance, in the case of a 10-digit number,
+# this means the upper limit is at most 274862.   
+# 
+# Usage: Save day15b.map and then say
+#
+#                 read("day15a.map");
+#                 newtestp(981237409189273409);
+#
+#        You'll either see an error, or a message saying 981237409189273409 
+#        is composite. (There is a weird glitch that only seems to go away if 
+#        you load the code twice.) So if you got the error, just say
+#
+#                 read("day15a.map");
+#                 newtestp(981237409189273409);
+#
+#        again, and then you should get meaningful output. You
+#        can change the 981237409189273409 to any number whose 
+#        primality you want to check! Of course, the bigger the number, 
+#        the more time it will take. But the complexity is polynomial 
+#        in log(putp), so the speed should be passable. You are welcome 
+#        to check how big you can make your numbers before the program 
+#        gets way too slow...
+newtestp:=proc(putp) 
+
+local a,afailed,i,j,foundpseudoprime,n,foundcompowit,o2,q,grhlim,wit:  
+
+with(numtheory): # call in the number theory library 
+with(padic):     # call in the p-adic library (here, just for the ord command)
+
+ foundpseudoprime:=0: grhlim:=ceil(2*log(putp)^2): 
+
+ j:=2: foundcompowit:=0: # no compositeness witness yet... 
+ while (foundcompowit=0 and j<=grhlim) do  
+  a:=j: # set a...
+  wit:=a: 
+  afailed:=0: # we don't know whether current a is a witness a yet...
+  o2:=ordp(putp-1,2):     # find exponent of largest power of 2 dividing n-1
+  q:=(putp-1)/(2^o2):     # extract odd part of originaln-1. 
+  a:=Power(a,q) mod putp: # replace a by value of a^q mod putp 
+  # outer if/else/end block checks whether a^q is 1 or not... 
+  #  NOTE: value of a was reset to a^q mod putp, hence use of a below...
+  if ((a-1 mod putp)<>0) then 
+   i:=o2: 
+   while ((afailed=0) and i>0) do 
+    i:=i-1:  
+    if ((a+1 mod putp)<>0) then      
+     a:=a^2 mod putp: 
+    else 
+     afailed:=1:
+    end: 
+   end: 
+  else  
+   afailed:=1: 
+  end if: 
+   
+  if afailed=0 then 
+   foundcompowit:=1: 
+  end: 
+
+  j:=j+1:   
+ end;
+
+ if foundcompowit=0 then 
+  foundpseudoprime:=1: 
+  print(putp," is prime (assuming GRH)!"): 
+ else 
+  print("Found ",wit," to be a Miller-Rabin witness: your number is *NOT* composite!"): 
+ end: 
+
+end proc: 

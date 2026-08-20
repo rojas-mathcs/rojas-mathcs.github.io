@@ -1,0 +1,25 @@
+# copyright 2018, by Leann Kopp, Natalie Randall, and J. Maurice Rojas.  
+# Written by Leann Kopp and Natalie Randall, during a Summer 2018 REU 
+# at Texas A&M, mentored by J. Maurice Rojas.  
+#
+# Usage: countpk(f,p,k) will yield the number of roots in Z/(p^k) of a univariate 
+#        polynomial f in Z[x]. First, however, you should say 
+#           with(padic): 
+#           read("count.map"): 
+#        so that maple is ready! 
+with(padic): 
+countpk := proc (f, p, k) local count, g, rootList, St, i, z, s, q, newf;
+ count := 0;
+ g := `mod`(Gcd(x^p-x, f), p);
+ rootList := `mod`(Roots(g), p);
+ St := stack[new]();
+ for i to nops(rootList) do stack[push](rootList[i, 1], St) end do;
+ while not stack[empty](St) do z := stack[pop](St);
+ q := min(k-1, degree(f));
+ s := k;
+ for i to q do if ordp((eval(diff(f, `$`(x, i)), x = z))*p^i/factorial(i), p) < s then s := ordp((eval(diff(f, `$`(x, i)), x = z))*p^i/factorial(i), p) end if end do;
+ if ordp(eval(f, x = z), p) < s then s := ordp(eval(f, x = z), p) end if;
+ if k <= s then count := count+p^(k-1) elif s = 1 then if `mod`(eval(diff(f, x), x = z), p) <> 0 then count := count+1 end if else newf := (eval(f, x = z))/p^s;
+ for i to q do newf := newf+(eval(diff(f, `$`(x, i)), x = z))*x^i/(factorial(i)*p^(s-i)) end do;
+ count := count+p^(s-1)*countpk(newf, p, k-s, counter+1) end if end do;
+ return count end proc;

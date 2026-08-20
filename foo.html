@@ -1,0 +1,47 @@
+13. Saturday, March 23, 2019: HW#4, due Tuesday, April 2, consists of 
+the following:
+<ul>
+<li>0. Please read Chapter 5 of [HPS14].  
+<li>1. Suppose that, given any n-bit prime p, a generator g for 
+       <strong>F</strong><sup>*</sup><sub>p</sub>, and h &isin; 
+       <strong>F</strong><sup>*</sup><sub>p</sub>, one can 
+       compute the (n-6)th bit of the base-g discrete log of h 
+       in time polynomial in n. 
+       Please prove that the entire base-g discrete log of h can be 
+       computed in time polynomial in n. <strong>Note:</strong> To be clear, 
+       if x is written as x<sub>1</sub>+2x<sub>2</sub>+&middot;&middot;
+       &middot;+2<sup>n-1</sup>x<sub>n</sub>, then x<sub>n-6</sub> is 
+       the (n-6)th bit of x.  
+<li>2. Suppose c is any fixed positive integer, n is an integer greater 
+       than c, and that given any n-bit prime p, a generator g for 
+       F<sup>*</sup><sub>p</sub>, and h &isin;
+       <strong>F</strong><sup>*</sup><sub>p</sub>, one can
+       compute the (n-c)th bit of the base-g discrete log of h 
+       in time polynomial in n. Please prove that the entire base-g 
+       discrete log of h can be
+       computed in time polynomial in n. <strong>Note:</strong> To be clear, 
+       if x is written as x<sub>1</sub>+2x<sub>2</sub>+&middot;&middot;
+       &middot;+2<sup>n-1</sup>x<sub>n</sub>, then x<sub>n-6</sub> is
+       the (n-6)th bit of x. 
+<li>3. Please prove that if computing discrete logarithms (in the unit 
+       groups of prime fields) is not doable in 
+       polynomial-time, then P is not equal to NP. <strong>Hint:</strong> 
+       You should make use of the decision version of the Discrete Log problem 
+       we covered in class a few lectures ago. 
+<li>4. Please prove that if factoring RSA integers is 
+       not doable in polynomial-time, then P is not equal to NP. 
+       <strong>Hint:</strong> 
+       You should make use of the decision version of the RSA Factoring 
+       we covered in class a few lectures ago. 
+<li><strong>Remark #1:</strong> Problems #3 and #4 should clarify, to 
+    some extent, why it's so hard to prove that DLP and RSA Factoring 
+    are hard. 
+<li><strong>Remark #2:</strong> An even stronger assumption of hardness for 
+DLP (resp. RSA Factoring) is what makes the Blum-Micali (resp. Shamir) 
+PRGs work. More generally, it is a classical theorem from complexity 
+theory that the existence of <strong>any</strong> PRG implies that P 
+is not equal to NP. This clarifies, to some extent, why it's so hard to 
+prove the existence of PRGs (in the sense covered in lecture). 
+<li>5. Why would it not make sense to run the Blum-Micali PRG long enough 
+       to extract exp(Omega(sqrt(n log(n)))) many pseudo-random bits? 
+</ul>  

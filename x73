@@ -1,0 +1,160 @@
+howdy!
+
+thank you for coming, and thank you, korok, for the opportunity to speak at 
+ mays! we need more math and engineering professors to exit their buildings 
+ and come to mays more often!
+
+i usually speak at a blackboard and, when forced, i use slides or a laptop. 
+so now i am free to talk without props! this also frees you from having to 
+see too many formulas. 
+
+so what i'd like to do is impart to you the importance of crypto: not 
+crypto as in cryptocurrency, but crypto as in cryptology. i'll do this 
+through 3 stories. they will not be long. 
+
+story #1 involves cuba, russia, and spying. but i need to start with a puzzle 
+underlying the story. i'm going to tell you some digits, and you're 
+going to tell me what's unusual about them... 
+
+   1, 2, 1, 2,   3, 4, 3, 4,    5, 6, 5, 6,   7, 8, 7, 8,    3, 2, 1 
+
+so? ... maybe it's not so much the pattern, but what's not there? ... 
+right!: no 9s! the point is, that sequence is too special to be random. 
+more to the point, a sequence like that is what gave away a group of 
+spies on the east coast of the us in the 1980s. 
+has anyone seen the tv series ``the americans''? this case is actually 
+a real event that helped inspire the series. 
+
+spies obviously need to hear from home base, and send messages to home 
+base. this is where crypto comes in: (crypto as in cryptology as in 
+secret codes) there are simple, standard ways to take a message, 
+convert it to numbers, take a key (a long string of numbers), add the 
+key to your message, and then send the new numbers to your home base. 
+no one seeing the number you send would be able to know your original 
+message, unless they know your key. if you are a good spy, this is true, 
+and your home base knows your key. this (slow) method is known as a one-time 
+pad. if you watched ``the americans'', you'll remember that philip and 
+elizabeth (russian spies passing as average, upper middle-class americans) 
+have a secret cubby in their garage where they have a little notebook 
+storing their keys. if your memory is really good, you'll also remember 
+that elizabeth would sometimes listen to the radio, to listen for strings 
+of numbers. this is actually real: the russians would use shortwave radio 
+to transmit numbers that spies could write down to use as keys. 
+
+so how is this secret, if the us already knew about this for years? 
+anyone? ... yes: time! spies would be told ahead of time (and through 
+encrypted messages) when to listen. now... would it make sense to 
+only send numbers when needed, and then go quiet? no!: it makes 
+more sense to *ALWAYS* be sending numbers, so no one knows when 
+you are really sending keys. so then, you need to be able to send 
+*RANDOM* numbers when you are not sending keys. hopefully, the keys 
+look random, and your ``fake'' random numbers look random too! 
+
+trouble: a numbers station near bauta, cuba, around 2007, transmitted 
+         some messages with no 9s. innocuous? boring? no! this was a BIG 
+         hint that the was filler, and someone messed up! anyway, the 
+         fbi or nsa found a similar (possibly the same?) LACK of randomness 
+         coming from a cuban numbers station, and then used this information 
+         to unleash the expertise of nsa and their subcontractors and catch  
+         10 russian spies living under false canadian and us identities. 
+         two of these were andrey bezrukov and elena vavilova (pretending to 
+         be donald heathfield and tracey lee ann foley), arrested in boston 
+         on june 27, 2010. 
+         % see sep 18, 2020 matt blaze blog post!!!
+         % ~/Big/20200918-mattblaze-acryptol*mys*mayhelpmybitcoin* 
+         % see also ``compromised'', by peter strzok! 
+note: there is also an older instance of bad randomness revealing a spy: 
+      (directly from nsa website!) 
+      july-dec, 1946 reconstruction of kgb codebook by meredith gardner, 
+                and translation of a few messaages including one about the 
+                atomic bomb. on dec 13, gardner was also able to read a 
+                kgb message that discussed the us presidential election 
+                campaign of 1944. in late april/early may 1947, gardner 
+                was able to read 2 kbg messages sent in dec 1944 showing 
+                that someone inside the war dept general staff was providing 
+                highly classified info to the soviets. around 22 july 1947, 
+                decoded messages revealed the names of ethel and julius 
+                rosenberg. 
+so that was story #1: watch your randomness! 
+
+before i tell story #2, i would like to brag/inform a bit: 
+ the study of how to simulate randomness, i.e., the study of pseudorandomness, 
+ is one of the *DEEPEST* parts of theoretical computer science and mathematics. 
+ pseudorandomness has been with us for millenia (gambling?), and since around 
+ the 1980s, research in the area has exploded and continues to grow. 
+
+also, an historical note: in 1987, congress debated whether NIST (the 
+ national institute of standards and technology, renamed from the national 
+ bureau of standards) or nsa would provide security guidance, including 
+ cryptographic standards for non-national security agencies. the administration 
+ and nsa wanted nsa in charge, but... industry and the public objected, and 
+ won... kind of: the computer security act (jan 8, 1988: see also the 
+ federal info secu manag act of 2002!) made nist responsible, 
+ but *nist was to consult w nsa on the development of cryptographic standards*. 
+ from the congressional commmittee report, it is clear congress intended nist 
+ be in charge. however, in the ``consultation'' between the agencies, nsa 
+ exercised control. e.g., in the 1990s, nist adopted a digital signature 
+ standard that was nsa's choice, not industry's. several years later, 
+ nist approvl of the clipper keye escrow standard (later dumped) contributed 
+ to delay in developing and deploying strong crypto for the private sector. 
+ there was a shift in the late 1990s, with the search for a replacement for 
+ DES: AES (a belgian-designed standard) came out of an open international 
+ competition. however, nsa was playing games behind the scenes: e.g., 
+ in dec 2013, reuters reported that nsa paid rsa $10M (when?!) to adopt 
+ dual ec-drbg for its default 
+ random bit generator in its BSAFE cryptographic toolkit. (nist recommended 
+ dropping dual ec-drbg around sep 2013.) however, even after  
+ microsoft researchers shumow and ferguson raised objections in 2007, nsa 
+ did not deprecate dual ec-drbg!  (see 2014 blog post of sue landau!: 
+   https://www.lawfareblog.com/nsas-subversion-nists-algorithm ) 
+ 
+story #2 starts around 2006: 
+``...The agency treats its recent successes in deciphering protected 
+information as among its most closely guarded secrets, restricted to those 
+cleared for a highly classified program code-named Bullrun, according to the 
+documents, provided by Edward J. Snowden, the former N.S.A. contractor.'' 
+...
+“For the past decade, N.S.A. has led an aggressive, multipronged effort to 
+break widely used Internet encryption technologies,” said a 2010 memo 
+describing a briefing about N.S.A. accomplishments for employees of its 
+British counterpart, Government Communications Headquarters, or GCHQ. 
+“Cryptanalytic capabilities are now coming online. Vast amounts of encrypted 
+Internet data which have up till now been discarded are now exploitable.”
+When the British analysts, who often work side by side with N.S.A. officers, 
+were first told about the program, another memo said, “those not already 
+briefed were gobsmacked!”
+...
+Cryptographers have long suspected that the agency planted vulnerabilities 
+in a standard adopted in 2006 by the National Institute of Standards and 
+Technology and later by the International Organization for Standardization, 
+which has 163 countries as members.  Classified N.S.A. memos appear to 
+confirm that the fatal weakness, discovered by two Microsoft cryptographers 
+in 2007, was engineered by the agency. The N.S.A. wrote the standard and 
+aggressively pushed it on the international group, privately calling the
+effort “a challenge in finesse.” 
+“Eventually, N.S.A. became the sole editor,” the memo says.
+  curves for dead nist sp800-90 standard! (thanks to 
+   https://safecurves.cr.yp.to): 
+p-256: y^2 = x^3-3x
+ +41058363725152142129326129780047268409114441015993725554835256314039467401291
+   mod p = 2^256 - 2^224 + 2^192 + 2^96 - 1 
+=115792089210356248762697446949407573530086143415290314195533631308867097853951  123456789012345678901234567890123456789012345678901234567890123456789012345678
+          1         2         3         4         5         6         7      78
+
+p-384: y^2 = x^3-3x
+ +27580193559959705877849011840389048093056905856361568521428707301988689241309860865136260764883745107765439761230575
+mod p = 2^384 - 2^128 - 2^96 + 2^32 - 1 
+
+p-521: y^2 = x^3 + ax + b mod p where 
+a = 0x1fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc 
+b = 0x51953eb9618e1c9a1f929a21a0b68540eea2da725b99b315f3b8b489918ef109e156193951ec7e937b1652c0bd3bb1bf073573df883d2c34f1ef451fd46b503f00
+and 
+p = 2^521 - 1 
+  = 6864797660130609714981900799081393217269435300143305409394463459185543183397656052122559640661454554977296311391480858037121987999716643812574028291115057151 
+  = 157-digit prime!  
+
+% around 1940: g.h. hardy: ``No one has yet discovered any warlike purpose to
+%              be served by the theory of numbers or relativity, and it seems
+%              unlikely that anyone will do so for many years."
+
+

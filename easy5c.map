@@ -1,0 +1,27 @@
+# Copyright 2017, J. Maurice Rojas
+# 
+# The following code solves Problem 5c on HW#2. 
+# In particular, if you save this code under the name 
+# easy5c.map, run maple, then say 
+#  read("easy5c.map"); 
+# maple should say 
+#  104, 116, 116, 112, 115, 58, 47, 47, 119, 119, 119, 46, 121, 111, 117, 116,
+#   117, 98, 101, 46, 99, 111, 109, 47, 119, 97, 116, 99, 104, 63, 118, 61, 
+#   45, 79, 80, 67, 74, 89, 79, 106, 74, 50, 111
+# If you then copy these numbers into an array in matlab and (in matlab) 
+# say 
+#  nums=[104, 116, 116, 112, 115, 58, 47, 47, 119, 119, 119, 46, 121, 111, 117, 116, 117, 98, 101, 46, 99, 111, 109, 47, 119, 97, 116, 99, 104, 63, 118, 61, 45, 79, 80, 67, 74, 89, 79, 106, 74, 50, 111]; 
+# and then say 
+#  char(nums) 
+# you should get: 
+#  https://www.youtube.com/watch?v=-OPCJYOjJ2o 
+# which should lead you to a video of my friends, Choro das Tres...
+
+n:=15565728732977275987537732464288335871582590656780416209943917687896713120752382885278924529477398852712: 
+s[1]:=(n mod 256): 
+m[1]:=floor(n/256): 
+for i from 2 to 43 do 
+ s[i]:=(m[i-1] mod 256): 
+ m[i]:=floor(m[i-1]/256): 
+end:
+print(seq(s[k],k=1..43));

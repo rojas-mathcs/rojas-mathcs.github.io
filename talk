@@ -1,0 +1,100 @@
+I: univariate sparse ->  several variables -> main theorem 1 -> corollaries 
+II: nxn systems: complete fewnomial conjecture -> main theorem 2   
+
+[ main message: 
+ to get better complexity bounds (topological or algorithmic) 
+ one must consider randomization and approximation. ] 
+
+[ main goal: 
+ use generalized discriminant varieties to enable simple 
+ combinatorial methods that succeed with high probability for 
+ hard problems. in particular, we'll find a point of view that 
+ illuminates several recent problems. 
+  [ (a) new (deterministic) upper and lower algorithmic complexity bounds
+  (b) sharper (high probability) fewnomial bounds 
+  (c) an observation on polyhedral homotopy methods 
+  (d) fix a broken conjecture of itenberg-roy ]   ] 
+
+let's start with an example...  
+
+example#1: univariate trinomials and discriminant chambers...
+ movie1...
+
+so how hard is it to decide 0, 1, or 2 positive roots? 
+i.e., how hard is it to see the chambers? well, simple linear algebra...
+ 1   1   1   cx^a  =  0   =>   null = [29 -39 10] 
+ 0  10  39 
+...
+
+note: polys of deg D => O(D log^2 D) arith ops
+      we see, via recursive squaring, that O(log^2 D) is enough
+      but what about BIT complexity? 
+      linear forms in logs! 
+
+but now note the following: 
+ build ArchNewt(f):= conv{(a,log(Length(A-a))-log|c_a|) | a in A={0,10,39}} 
+ you could also decide chambers by looking at the lower hull of 
+ ArchNewt(f)! 
+
+movie2
+
+does this generalize? quite a bit...
+
+matlab: bilinear, chambers2...
+
+[ consider 
+f(x) := c_1+c_2x^{999}_1+c_3x^{73}_1x_3+c_4x^D_2+c_5x^D_1x^{3D}_2x^{9D}_3
+(a trivariate 5-nomial), with c_i in Z\{0} and D in N for now...
+
+how hard is it to decide the existence of a real root for such 
+a 5-nomial? ] 
+
+[nearly munged it by going to nxn too soon...] 
+so let's finish our discussion of 1 poly, n vars, with the following 
+thm: (bihan-rojas-stella) 
+ an ``honest'' n-variate (n+2)-nomials has Z_+(f) diffeotopic to 
+ on of the following types: ... 
+ moreover, we can decide which in P. 
+
+the classical critical points method (dating back to work of 
+grigoriev and vorobjov in the 1980s, and improvements by 
+canny, bpr, and others until the 1990s) would yield a complexity 
+bound of the form (D+log max |c_i|)^{O(1)}. 
+
+cor: # of diffeotopy types is exactly floor((n+2)/8), 
+     indep of expos and degree! 
+mentioned saugata's o-minimality!
+
+but what about n-variate (n+3)-nomials? there's an obstruction: 
+here's the simplest example I know of: 
+1-x-y+(6/5)xy(x^3+y^3)
+in particular, no viro diagram would yield an oval. but the 
+positive zero set is nevertheless...  
+gh pic1.eps & ...
+mentioned mounir!
+
+so what do we do?  first, let's generalize to systems, and see 
+how our ideas generalize...
+
+consider an (n+k)nxn
+
+mentioned khovanski's beautiful result!
+
+complete fewnomial conj!: 
+      O(k^{2.25n})                     O((k+n)^{5n})
+O(2^{(k-1)(k-2)/2} n^{k-1})      in progress (ibrahim,rojas,rusek) 
+[should have put in references more clearly: nearly forgot  
+ frederic (and frank pointed that out later too)]
+
+discriminant chambers... 
+mentioned itenberg-roy conj and how i can save it... 
+
+thm: [AR08] for m pts in Z^n, the critical radius is: 
+     O(m^{(n+5)/2 n^{(n+5)/4} s^{n+(1/2)} log (mns)), 
+ where s=max cord size of A. 
+
+other illustrations...
+
+ended with critical radius picture... 
+
+mentioned bernie and scott along the way!
