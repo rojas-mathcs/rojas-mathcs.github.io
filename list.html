@@ -1,4 +1,38 @@
 <head><title>Prof. J. Maurice Rojas' Research Papers</title>
+<style>
+body.night {
+  background-color: #000;
+  color: #ddd;
+}
+body.night a {
+  color: #8ab4f8;
+}
+#theme-toggle {
+  float: right;
+  margin: 4px 8px;
+}
+</style>
+
+
+<button id="theme-toggle" type="button">Night mode</button>
+
+<script>
+(function () {
+  var button = document.getElementById("theme-toggle");
+
+  function setTheme(night) {
+    document.body.classList.toggle("night", night);
+    button.textContent = night ? "Day mode" : "Night mode";
+    localStorage.setItem("theme", night ? "night" : "day");
+  }
+
+  setTheme(localStorage.getItem("theme") === "night");
+
+  button.onclick = function () {
+    setTheme(!document.body.classList.contains("night"));
+  };
+}());
+</script>
 
 <h1>
 <A href="index.html">J. Maurice Rojas</A>' Mathematical Papers (Including 
@@ -185,8 +219,7 @@ Joachim von zur Gathen, vol. 47, no. 4, pp. 454-479 (April 2012).<br>
 <strong>Note:</strong> This version corrects a misquote of Yu's Theorem and 
 a normalization typo (involving a modified definition of the discriminant) 
 in Lemma 5.3, and improves a central complexity exponent from 8 to 4 (!).  
-<li>58. <a 
-href="http://www.amazon.com/Randomization-Relaxation-Complexity-Polynomial-Equation/dp/0821852280">Randomization, Relaxation, and Complexity</a>,  
+<li>58. <a href="https://www.amazon.com/Randomization-Relaxation-Complexity-Polynomial-Equation/dp/0821852280">Randomization, Relaxation, and Complexity</a>,  
 (edited by Leonid Gurvits, Philippe Pébay, J. Maurice Rojas, and David C. 
 Thompson), selected papers from 
 a 5-day BIRS workshop on Randomization, Relaxation, and Complexity 
