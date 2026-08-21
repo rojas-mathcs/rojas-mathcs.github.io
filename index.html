@@ -1,9 +1,47 @@
 <body bgcolor="white">
 
-<head><title>Prof. J. Maurice Rojas' Home Page</title></head>
+<head><title>Prof. J. Maurice Rojas' Home Page</title>
+<style>
+body.night {
+  background-color: #000;
+  color: #ddd;
+}
+body.night a {
+  color: #8ab4f8;
+}
+body.night table {
+  background-color: #222 !important;
+}
+#theme-toggle {
+  float: right;
+  margin: 4px 8px;
+}
+</style>
+</head>
 
 <h1>Maurice's Home Page 
 </h1>
+
+<button id="theme-toggle" type="button">Night mode</button>
+
+<script>
+(function () {
+  var button = document.getElementById("theme-toggle");
+
+  function setTheme(night) {
+    document.body.classList.toggle("night", night);
+    button.textContent = night ? "Day mode" : "Night mode";
+    localStorage.setItem("theme", night ? "night" : "day");
+  }
+
+  setTheme(localStorage.getItem("theme") === "night");
+
+  button.onclick = function () {
+    setTheme(!document.body.classList.contains("night"));
+  };
+}());
+</script>
+
 
 <table border=1 cellpadding=0 bgcolor="ccccff"> 
 <tr align=center>
@@ -253,7 +291,7 @@ Wife (Sueli Rocha-Rojas) Defends Mothers and Babies in Hong Kong</a>
 src="http://www.mit.edu/cgi/counter/jmrojas" alt="several"></a>
 times since the counter was last reset. 
 <hr>
-<A HREF="http://www.eff.org/blueribbon.html">
+<A HREF="https://www.eff.org/blueribbon.html">
 <IMG SRC="rotate_rib.gif"> </A> 
 <hr>
 
